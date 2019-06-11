@@ -46,3 +46,14 @@ button {
   color: white;
   padding: 8px;
 }
+h4 {
+  margin: 1em 1em 0em 0em;
+  display: inline;
+}
+#place_name, #current_summary, #temperature {
+  display: inline;
+  text-align: right;
+}
+.form_address {
+  margin-bottom: 1em
+}

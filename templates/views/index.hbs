@@ -13,13 +13,14 @@
 
       <p>Use this site to get your weather</p>
 
-      <form>
+      <form class="form_address">
         <input name="location" placeholder="Location"/>
         <button>Search</button>
       </form>
 
-      <p id="message-1"></p>
-      <p id="message-2"></p>
+      <div><h4>Found Location:</h4><p id="place_name"></p></div>
+      <div><h4>Summary:</h4><p id="current_summary"></p></div>
+      <div><h4>Temperature:</h4><p id="temperature"></p></div>
   </div>
   {{>footer}}
 

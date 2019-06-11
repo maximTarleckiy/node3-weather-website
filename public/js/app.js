@@ -2,18 +2,20 @@ console.log('Client side javascript file is loaded')
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+const placeNameEl = document.querySelector('#place_name')
+const summaryEl = document.querySelector('#current_summary')
+const temperatureEl = document.querySelector('#temperature')
 
-messageOne.textContent = ''
+placeNameEl.textContent = ''
 
 weatherForm.addEventListener('submit', (event) => {
   // prevent form to reload page
   event.preventDefault()
   const location = search.value
 
-  messageOne.textContent = 'Loading...'
-  messageTwo.textContent = ''
+  placeNameEl.textContent = 'Loading...'
+  summaryEl.textContent = ''
+  temperatureEl.textContent = ''
 
   fetch('/weather?address=' + encodeURI(location))
     .then((response) => {
@@ -22,8 +24,9 @@ weatherForm.addEventListener('submit', (event) => {
           messageOne.textContent = data.error
           return
         }
-        messageOne.textContent = data.location
-        messageTwo.textContent = data.forecast.summary
+        placeNameEl.textContent = data.location
+        summaryEl.textContent = data.forecast.summary
+        temperatureEl.textContent = data.forecast.temperature
     })
   })
 })
